@@ -9,7 +9,6 @@ public class HelloWorld {
 		 * 2016/03/02
 		 */
 		System.out.println("Hello World!");
-		//I mean what did you think it would do?
 	}
 
 }
