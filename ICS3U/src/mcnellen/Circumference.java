@@ -9,6 +9,7 @@ public class Circumference {
          * This program calculates the circumference of a circle from the radius
          * @author Quinlan McNellen
          * 2016/03/08
+         * v0.0.3
          */
         
         //Declare integer radius
