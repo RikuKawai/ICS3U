@@ -1,5 +1,7 @@
 package mcnellen;
 
+import java.util.Scanner;
+
 public class Circumference {
 
     public static void main(String[] args) {
@@ -10,15 +12,16 @@ public class Circumference {
          */
         
         //Declare integer radius
-        int radius;
+        double radius;
         //Declare integer circumference
-        int circumference;
+        double circumference;
         //Declare input scanner
         Scanner scan = new Scanner(System.in);
         //Print prompt for the radius value
         System.out.println("Radius: ");
         //Read the value from the user
-        radius = scan.nextLine();
+        radius = Double.parseDouble(scan.nextLine());
+        scan.close();
         //Calculate circumference
         circumference = (3.14 * radius * 2);
         //Print the output value
