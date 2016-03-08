@@ -13,6 +13,7 @@ public class MothersAge {
          */
          final String VERSION = "v0.0.1";
          
+         //declare variables and scanner
          Scanner scan = new Scanner(System.in);
          String mothersName;
          String childsName;
@@ -20,6 +21,7 @@ public class MothersAge {
          int childsBirthYear;
          int ageAtBirth;
          
+         //output queries and parse input
          System.out.println("MothersAge " + VERSION);
          System.out.print("Mother\'s name: ");
          mothersName = scan.nextLine();
@@ -29,9 +31,12 @@ public class MothersAge {
          childsName = scan.nextLine();
          System.out.print("Year of birth: ");
          childsBirthYear = Integer.parseInt(scan.nextLine());
+         //close the input scanner
          scan.close();
          
+         //calculate age difference
          ageAtBirth = (childsBirthYear-mothersBirthYear);
+         //print output
          System.out.println(mothersName + " was " + ageAtBirth + " years old when " + childsName + " was born.");
     }
 }
