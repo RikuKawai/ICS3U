@@ -9,18 +9,22 @@ public class ArithmeticExpressions {
          * This program applies various operations to five input numbers
          * @author Quinlan McNellen
          * 2016/03/09
-         * v0.0.1
+         * v0.0.2
          */
-         final String VERSION = "v0.0.1";
+         //set version number
+         final String VERSION = "v0.0.2";
          
+         //declare variables
          int num1;
          int num2;
          int num3;
          int num4;
          int num5;
          
+         //declare input scanner
          Scanner scan = new Scanner(System.in);
          
+         //output queries and parse input
          System.out.println("ArithmeticExpressions " + VERSION);
          System.out.print("Number 1: ");
          num1 = Integer.parseInt(scan.nextLine());
@@ -33,8 +37,10 @@ public class ArithmeticExpressions {
          System.out.print("Number 5: ");
          num5 = Integer.parseInt(scan.nextLine());
          
+         //close input scanner
          scan.close();
          
+         //calculate and print output
          System.out.println("Sum of 5 numbers is " + (int)((num1+num2+num3+num4+num5)));
          System.out.println("2nd subtracted from 3rd " + (int)((num3-num2)));
          System.out.println("Product of 1st and 5th number " + (int)((num1*num5)));
