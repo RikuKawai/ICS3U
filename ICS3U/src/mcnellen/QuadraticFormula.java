@@ -10,10 +10,10 @@ public class QuadraticFormula {
          * This program takes the values of a quadratic equation and solves for X 
          * @author Quinlan McNellen
          * 2016/03/10
-         * v0.0.2
+         * v0.0.3
          */
          //set version number
-         final String VERSION = "v0.0.2";
+         final String VERSION = "v0.0.3";
          
          //declare variables
          double a;
