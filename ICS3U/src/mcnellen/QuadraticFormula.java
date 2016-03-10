@@ -27,7 +27,7 @@ public class QuadraticFormula {
          DecimalFormat oneDecimal = new DecimalFormat ("$###,##0.00");
          
          //declare input scanner
-         Scanner scan = new Scannner(System.in);
+         Scanner scan = new Scanner(System.in);
          
          //output queries and parse input
          System.out.println("QuadraticFormula " + VERSION);
