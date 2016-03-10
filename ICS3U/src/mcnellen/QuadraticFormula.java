@@ -24,7 +24,7 @@ public class QuadraticFormula {
          double discriminant;
          
          //declare formatting scheme
-         DecimalFormat oneDecimal = new DecimalFormat ("$###,##0.00");
+         DecimalFormat oneDecimal = new DecimalFormat ("###,##0.0");
          
          //declare input scanner
          Scanner scan = new Scanner(System.in);
@@ -43,8 +43,8 @@ public class QuadraticFormula {
          
          //calculate values
          discriminant = Math.sqrt(Math.pow(b,2)-(4*a*c));
-         x1 = ((-1*b)+discriminant)/2;
-         x2 = ((-1*b)-discriminant)/2;
+         x1 = ((-b)+discriminant)/(2*a);
+         x2 = ((-b)-discriminant)/(2*a);
          
          //print output
          System.out.println("X = " + oneDecimal.format(x1));
