@@ -6,7 +6,7 @@ public class NameRater {
     
     public static void main(String[] args) {
         
-        final String VERSION = "v0.0.1"
+        final String VERSION = "v0.0.1";
         
         String name;
         String ratingText;
