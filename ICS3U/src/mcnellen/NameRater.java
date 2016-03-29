@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class NameRater {
     
     public static void main(String[] args) {
-        /* QuadraticFormula.java
+        /* NameRater.java
          * This program takes the user's name and randomly decides it's opinion of it
          * @author Quinlan McNellen
          * 2016/03/23
