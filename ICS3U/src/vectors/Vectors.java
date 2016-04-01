@@ -1,4 +1,4 @@
-package mcnellen;
+package vectors;
 
 import java.util.Scanner;
 
