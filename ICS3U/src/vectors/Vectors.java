@@ -17,6 +17,6 @@ public class Vectors {
         final String VERSION = "v0.0.1a";
         
         System.out.println("Vectors " + VERSION);
-        System.out.print()
+        System.out.print("");
     }
 }

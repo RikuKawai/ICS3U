@@ -2,9 +2,9 @@ package vectors;
 
 public class ParseDirection {
     public static void main(String[] args) {
-        String poleFrom;
-        String poleTo;
-        double degreesChange;
+        String poleFrom = "";
+        String poleTo = "";
+        double degreesChange = 0.0;
         double poleDegrees;
         boolean subtract = false;
         boolean noModifier = false;
