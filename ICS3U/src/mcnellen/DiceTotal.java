@@ -1,49 +1,64 @@
 package mcnellen;
 
-class DiceWorker0 extends Thread {
-	DiceWorker0() {
-		super("Core 0 Worker");
-		System.out.println("Worker 0 created" + this);
-		start();
-	}
-	public void run() {
-		int dieA;
-		for (int i=0; i<=10000; i++) {
-			dieA = (int)(Math.random() * 6) + 1;
-		}
-		System.out.println("Worker 0 is done");
-	}
-}
-class DiceWorker1 extends Thread {
-	DiceWorker1() {
-		super("Core 1 Worker");
-		System.out.println("Worker 1 created" + this);
-		start();
-	}
-	public void run() {
-		int dieB;
-		for (int i=0; i<=10000; i++) {
-			dieB = (int)(Math.random() * 6) + 1;
-		}
-		System.out.println("Worker 1 is done");
-	}
-}
-class DiceTotal {
-	public static void main(String[] args) {
+/* DiceTotal.java
+ * This program simulates rolling two dice a certain number of times 
+ * and displays how many times each possible outcome occurred.
+ * @author Quinlan McNellen
+ * 2016/05/04
+ * v0.3
+ */
 
-		DiceWorker0 die0 = new DiceWorker0();
-		DiceWorker1 die1 = new DiceWorker1();
-		
-		try {
-			while(die0.isAlive() && die1.isAlive()) {
-				System.out.println("Main thread will be alive until workers are done");
-				Thread.sleep(100);
+public class DiceTotal {
+
+	static class Array {
+		private static int[] numberOfRolls = new int[11];
+		private static int totalRolls;
+		//private static int rollsToCompute;
+	}
+	
+	class T1 implements Runnable {
+		@Override
+		public void run() {
+			int dice;
+			for (int i=0; i<5000; i++) {
+				dice = ((int)(Math.random() * 6) + 1) + ((int)(Math.random() * 6) + 1);
+				Array.numberOfRolls[(dice - 2)]++;
+				Array.totalRolls++;
 			}
-		} catch(InterruptedException e) {
-			System.out.println("Main thread interrupted");
 		}
-		System.out.println("Main thread is done");
-		//int[] numberOfRolls = new int[11];
-		System.out.println(Runtime.getRuntime().availableProcessors());
+	}
+	class T2 implements Runnable {
+		@Override
+		public void run() {
+			int dice;
+			for (int i=0; i<5000; i++) {
+				dice = ((int)(Math.random() * 6) + 1) + ((int)(Math.random() * 6) + 1);
+				Array.numberOfRolls[(dice - 2)]++;
+				Array.totalRolls++;
+			}
+		}
+	}
+	
+	private void diceTotal() throws InterruptedException {
+		T1 worker0 = new T1();
+		T2 worker1 = new T2();
+		
+		new Thread(worker0).start();
+		new Thread(worker1).start();
+	}
+	public static void main(String[] args) throws InterruptedException {
+		try {
+			DiceTotal diceTotal = new DiceTotal();
+			diceTotal.diceTotal();
+			while(Array.totalRolls < (10000)) {
+				Thread.sleep(0, 1);
+			}
+			System.out.println("Number" + "\t" + "Total");
+			for (int i=0; i<=10; i++) {
+				System.out.println((i+2) + "\t" + Array.numberOfRolls[i]);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
