@@ -10,20 +10,21 @@ package mcnellen;
 
 public class DiceTotal {
 
-	static class Array {
+	static class Control {
 		private static int[] numberOfRolls = new int[11];
 		private static int totalRolls;
-		//private static int rollsToCompute;
+		private static int rollsToCompute = 10000;
+		private static int processors = Runtime.getRuntime().availableProcessors();
 	}
 	
 	class T1 implements Runnable {
 		@Override
 		public void run() {
 			int dice;
-			for (int i=0; i<5000; i++) {
+			for (int i=0; i<(Control.rollsToCompute / Control.processors); i++) {
 				dice = ((int)(Math.random() * 6) + 1) + ((int)(Math.random() * 6) + 1);
-				Array.numberOfRolls[(dice - 2)]++;
-				Array.totalRolls++;
+				Control.numberOfRolls[(dice - 2)]++;
+				Control.totalRolls++;
 			}
 		}
 	}
@@ -31,10 +32,10 @@ public class DiceTotal {
 		@Override
 		public void run() {
 			int dice;
-			for (int i=0; i<5000; i++) {
+			for (int i=0; i<(Control.rollsToCompute / Control.processors); i++) {
 				dice = ((int)(Math.random() * 6) + 1) + ((int)(Math.random() * 6) + 1);
-				Array.numberOfRolls[(dice - 2)]++;
-				Array.totalRolls++;
+				Control.numberOfRolls[(dice - 2)]++;
+				Control.totalRolls++;
 			}
 		}
 	}
@@ -50,12 +51,12 @@ public class DiceTotal {
 		try {
 			DiceTotal diceTotal = new DiceTotal();
 			diceTotal.diceTotal();
-			while(Array.totalRolls < (10000)) {
+			while(Control.totalRolls < (10000)) {
 				Thread.sleep(0, 1);
 			}
 			System.out.println("Number" + "\t" + "Total");
 			for (int i=0; i<=10; i++) {
-				System.out.println((i+2) + "\t" + Array.numberOfRolls[i]);
+				System.out.println((i+2) + "\t" + Control.numberOfRolls[i]);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
