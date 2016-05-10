@@ -15,6 +15,7 @@ public class WordGuess {
 	
 	public static void main(String[] args) {
 		// WordGuess.java
+		// This program picks from a set list of words and asks the user to guess letters or the entire word
 		// @author Quinlan McNellen
 		// version 1.0.1
 		// 2016/05/10
