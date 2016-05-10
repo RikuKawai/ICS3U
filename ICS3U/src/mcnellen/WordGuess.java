@@ -16,7 +16,7 @@ public class WordGuess {
 	public static void main(String[] args) {
 		// WordGuess.java
 		// @author Quinlan McNellen
-		// version 1.0
+		// version 1.0.1
 		// 2016/05/10
 		
 		Scanner scan = new Scanner(System.in);
@@ -71,7 +71,7 @@ public class WordGuess {
 		char letter = guess.charAt(0);
 		for (int i=0; i<currentWord.length; i++) { //scan array and check for letter
 			if (currentWord[i] == letter) {
-				displayedWord[i] = letter; //update displayed word replacing dashes with occurences of the letter
+				displayedWord[i] = letter; //update displayed word replacing dashes with occurrences of the letter
 				occurences++;
 			}
 		}
@@ -115,7 +115,11 @@ public class WordGuess {
 		wordGuessed = true;
 		System.out.println("Correct!");
 		System.out.print("The correct word was "); System.out.print(currentWord);
-		System.out.println("\nYou had " + guesses + " guesses left");
+		if (guesses > 1) { //print remaining guesses
+			System.out.println("\nYou had " + guesses + " guesses left");
+		} else if (guesses == 1) {
+			System.out.println("\nYou had " + guesses + " guess left"); //format guess singularly if there's only one guess left
+		}
 	}
 	public static int random(int min, int max) { //generates a random number between specified numbers
 		int x = (max - min) + 1;
