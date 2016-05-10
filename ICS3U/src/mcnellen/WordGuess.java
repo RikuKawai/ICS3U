@@ -17,7 +17,7 @@ public class WordGuess {
 		// WordGuess.java
 		// This program picks from a set list of words and asks the user to guess letters or the entire word
 		// @author Quinlan McNellen
-		// version 1.0.1
+		// version 1.0.2
 		// 2016/05/10
 		
 		Scanner scan = new Scanner(System.in);
@@ -34,7 +34,7 @@ public class WordGuess {
 					System.out.println("You have " + guesses + " guess left"); //format guess singularly if there's only one guess left
 				} else if (guesses <= 0) {
 					gameOver(); //end the game if the user runs out of guesses
-					break;
+					break; //it won't work without this break, I don't know why
 				}
 				System.out.println(displayedWord);
 				System.out.print("Enter a letter (! to guess entire word): ");
@@ -101,10 +101,8 @@ public class WordGuess {
 	public static char[] selectWord(String[] words) { //randomly selects a word from the array
 		int max = (words.length) - 1;
 		String word = allWords[random(0, max)];
-		char[] wordChars = new char[word.length()];
-		for (int i=0; i<word.length(); i++) {
-			wordChars[i] = word.charAt(i);
-		}
+		word = word.toLowerCase();
+		char[] wordChars = word.toCharArray();
 		return wordChars; //return selected word
 	}
 	public static void gameOver() { //stops asking for guesses and prints the correct answer
