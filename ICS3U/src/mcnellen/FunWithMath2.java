@@ -23,16 +23,40 @@ public class FunWithMath2 {
 		System.out.println(multiply(num1, num2));
 		System.out.println(divide(num1, num2));
 	}
-	public static int add(int x, int y) { //add two integers and print the sum
+	/*
+	 * add two integers and return the sum
+	 * @param x int first number
+	 * @param y int second number
+	 * @return sum of x and y
+	 */
+	public static int add(int x, int y) { 
 		return(x+y);
 	}
-	public static int subtract(int x, int y) { //subtract two integers and print the sum
+	/*
+	 * subtract two integers and return the sum
+	 * @param x int first number
+	 * @param y int second number
+	 * @return sum of x and y
+	 */
+	public static int subtract(int x, int y) { 
 		return(x-y);
 	}
-	public static int multiply(int x, int y) { //multiply two integers and print the product
+	/*
+	 * multiply two integers and return the product
+	 * @param x int first number
+	 * @param y int second number
+	 * @return product of x and y
+	 */
+	public static int multiply(int x, int y) { 
 		return(x*y);
 	}
-	public static int divide(int x, int y) { //divide two integers and print the product
+	/*
+	 * divide two integers and return the product
+	 * @param x int first number
+	 * @param y int second number
+	 * @return product of x and y
+	 */
+	public static int divide(int x, int y) { 
 		return(x/y);
 	}
 
