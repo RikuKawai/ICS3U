@@ -19,16 +19,36 @@ public class FunWithMath {
 		int num2 = Integer.parseInt(tokens[1]);
 		add(num1, num2); subtract(num1, num2); multiply(num1, num2); divide(num1, num2); //call methods
 	}
-	public static void add(int x, int y) { //add two integers and print the sum
+	/*
+	 * add two integers and print the sum
+	 * @param x int first number
+	 * @param y int second number
+	 */
+	public static void add(int x, int y) {
 		System.out.println(x+y);
 	}
-	public static void subtract(int x, int y) { //subtract two integers and print the sum
+	/*
+	 * subtract two integers and print the sum
+	 * @param x int first number
+	 * @param y int second number
+	 */
+	public static void subtract(int x, int y) { 
 		System.out.println(x-y);
 	}
-	public static void multiply(int x, int y) { //multiply two integers and print the product
+	/*
+	 * multiply two integers and print the product
+	 * @param x int first number
+	 * @param y int second number
+	 */
+	public static void multiply(int x, int y) {
 		System.out.println(x*y);
 	}
-	public static void divide(int x, int y) { //divide two integers and print the product
+	/*
+	 * divide two integers and print the product
+	 * @param x int first number
+	 * @param y int second number
+	 */
+	public static void divide(int x, int y) { 
 		System.out.println(x/y);
 	}
 
