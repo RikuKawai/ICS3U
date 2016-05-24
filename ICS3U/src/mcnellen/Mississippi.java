@@ -5,6 +5,7 @@ public class Mississippi {
 	public static void main(String[] args) {
 		/* Mississippi.java
 		 * This program vertically spells out MISSISSIPPI with block letters
+		 * If you see garbled text, make sure your Eclipse Workspace is set to UTF-8 encoding and not Cp1252.
 		 * @author Quinlan McNellen
 		 * 2016/05/17
 		 */
