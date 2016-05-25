@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class FunWithMath2 {
 
 	public static void main(String[] args) throws IOException {
-		/*
+		/**
 		 * FunWithMath2.java
 		 * This program accepts two integers from the user and then adds, subtracts, multiplies, and divides them
 		 * @author Quinlan McNellen
@@ -23,38 +23,38 @@ public class FunWithMath2 {
 		System.out.println(multiply(num1, num2));
 		System.out.println(divide(num1, num2));
 	}
-	/*
+	/**
 	 * add two integers and return the sum
-	 * @param x int first number
-	 * @param y int second number
-	 * @return sum of x and y
+	 * @param	x	first number
+	 * @param	y	second number
+	 * @return	sum of x and y
 	 */
 	public static int add(int x, int y) { 
 		return(x+y);
 	}
-	/*
+	/**
 	 * subtract two integers and return the sum
-	 * @param x int first number
-	 * @param y int second number
-	 * @return sum of x and y
+	 * @param	x	first number
+	 * @param	y	second number
+	 * @return	sum of x and y
 	 */
 	public static int subtract(int x, int y) { 
 		return(x-y);
 	}
-	/*
+	/**
 	 * multiply two integers and return the product
-	 * @param x int first number
-	 * @param y int second number
-	 * @return product of x and y
+	 * @param	x	first number
+	 * @param	y	second number
+	 * @return	product of x and y
 	 */
 	public static int multiply(int x, int y) { 
 		return(x*y);
 	}
-	/*
+	/**
 	 * divide two integers and return the product
-	 * @param x int first number
-	 * @param y int second number
-	 * @return product of x and y
+	 * @param	x	first number
+	 * @param	y	second number
+	 * @return	product of x and y
 	 */
 	public static int divide(int x, int y) { 
 		return(x/y);
